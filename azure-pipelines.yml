@@ -20,7 +20,7 @@ steps:
 - task: Ansible@0
   inputs:
     ansibleInterface: 'remoteMachine'
-    connectionOverSsh: 'SSH-Ansible-VM'
+    connectionOverSsh: 'SSH - Ansible VM'
     playbookSourceRemoteMachine: 'agentMachine'
     playbookRootRemoteMachine: '$(System.DefaultWorkingDirectory)'
     playbookPathLinkedArtifactOnRemoteMachine: 'users.yml'
@@ -28,4 +28,4 @@ steps:
     inventoryFileSourceRemoteMachine: 'agentMachine'
     inventoryFileLinkedArtifactOnRemoteMachine: 'azure_rm.yml'
     args: '--private-key ~/.ssh/ansible_rsa'
-    failOnStdErr: false
+    failOnStdErr: true
